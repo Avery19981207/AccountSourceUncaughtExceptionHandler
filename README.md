@@ -1,6 +1,6 @@
 ## README
 
-# 账号源对接项目优化方案
+# 账号源对接项目基于自定义setUncaughtExceptionHandler实现优雅异常未捕获处理
 
 ## 目录
 
