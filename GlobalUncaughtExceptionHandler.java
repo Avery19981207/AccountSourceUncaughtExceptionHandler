@@ -2,14 +2,15 @@ package com.cy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+* 单例模式
+*/
 public class GlobalUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler{
-    /**
-     * 单例模式——懒汉实现
-     * @return
-     */
+    
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    private static GlobalUncaughtExceptionHandler INSTANCE = null;
+    
+    private volatile static GlobalUncaughtExceptionHandler INSTANCE = null;
+    
     private GlobalUncaughtExceptionHandler() {
     }
 
@@ -31,9 +32,4 @@ public class GlobalUncaughtExceptionHandler implements Thread.UncaughtExceptionH
     public void uncaughtException(Thread t, Throwable e) {
         logger.error("Exception in thread {} ", t.getName(), e);
     }
-
-
-
-
-
 }
